@@ -84,9 +84,23 @@ body {
 @media (max-width: 401px) and (min-width: 391.1px) {
   .carpet-bg { background-size: 382px 382px; }  
 }
-@media (max-width: 412px) and (min-width: 401.1px) {
+
+@media (max-width: 408px) and (min-width: 401.1px) {
   .carpet-bg { background-size: 393px 393px; }  
 }
+@media (max-width: 409px) and (min-width: 408.1px) {
+  .carpet-bg { background-size: 393px 393px; }  
+}
+@media (max-width: 410px) and (min-width: 409.1px) {
+  .carpet-bg { background-size: 393px 393px; }  
+}
+@media (max-width: 411px) and (min-width: 410.1px) {
+  .carpet-bg { background-size: 393px 393px; }  
+}
+@media (max-width: 412px) and (min-width: 411.1px) {
+  .carpet-bg { background-size: 393px 393px; }  
+}
+
 @media (max-width: 421px) and (min-width: 412.1px) {
   .carpet-bg { background-size: 403px 403px; }  
 }
