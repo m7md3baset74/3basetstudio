@@ -53,7 +53,7 @@ export default function About() {
           border: "1px solid rgba(200,151,58,.2)",
         }}>
           <div style={{ position: "absolute", top: -5, left: -5, right: 5, bottom: 5, border: "1px dashed rgba(200,151,58,.1)", pointerEvents: "none" }} />
-          <span className="gradient-text-gold" style={{ fontFamily: "'Caveat', cursive", fontSize: "5rem", lineHeight: ".4", display: "block", marginBottom: "1.2rem" }}>"</span>
+          <span className="gradient-text-gold" style={{ fontFamily: "'Caveat', cursive", fontSize: "5rem", lineHeight: ".4", display: "block", marginBottom: "1.2rem" }}>&quot;</span>
           <p style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "1.15rem", lineHeight: 1.85, color: "var(--cream)" }}>
             The carpet is not a canvas — it breathes, it carries centuries of craft. Painting on it is not decoration. It is a conversation between two art forms across time.
           </p>
