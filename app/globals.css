@@ -84,8 +84,8 @@ body {
 @media (max-width: 401px) and (min-width: 391.1px) {
   .carpet-bg { background-size: 382px 382px; }  
 } */
-@media (max-width: 423px)  {
-  .carpet-bg { background-size: 405px 405px; }  
+@media (max-width: 412px)  {
+  .carpet-bg { background-size: 393px 393px; }  
 }
 /* @media (max-width: 421px) and (min-width: 411.1px) {
   .carpet-bg { background-size: 403px 403px; }  
