@@ -75,10 +75,10 @@ body {
   background-size: 320px 320px;
   background-position: 0 0;
 }
-@media (max-width: 381px) {
-  .carpet-bg { background-size: 362px 362px; }  
+@media (max-width: 768px) {
+  .carpet-bg { background-size: 100% 50%; }  
 }
-@media (max-width: 391px) and (min-width: 381.1px) {
+/* @media (max-width: 391px) and (min-width: 381.1px) {
   .carpet-bg { background-size: 371px 371px; }  
 }
 @media (max-width: 401px) and (min-width: 391.1px) {
@@ -86,19 +86,19 @@ body {
 }
 
 @media (max-width: 408px) and (min-width: 401.1px) {
-  .carpet-bg { background-size: 400px 400px; }  
+  .carpet-bg { background-size: 393px 393px; }  
 }
 @media (max-width: 409px) and (min-width: 408.1px) {
-  .carpet-bg { background-size: 400px 400px; }  
+  .carpet-bg { background-size: 393px 393px; }  
 }
 @media (max-width: 410px) and (min-width: 409.1px) {
-  .carpet-bg { background-size: 400px 400px; }  
+  .carpet-bg { background-size: 393px 393px; }  
 }
 @media (max-width: 411px) and (min-width: 410.1px) {
-  .carpet-bg { background-size: 400px 400px; }  
+  .carpet-bg { background-size: 393px 393px; }  
 }
 @media (max-width: 412px) and (min-width: 411.1px) {
-  .carpet-bg { background-size: 400px 400px; }  
+  .carpet-bg { background-size: 393px 393px; }  
 }
 
 @media (max-width: 421px) and (min-width: 412.1px) {
@@ -106,7 +106,7 @@ body {
 }
 @media (max-width: 429px) and (min-width: 421.1px) {
   .carpet-bg { background-size: 428px 428px; }  
-}
+} */
 
 .noise-bg {
   position: fixed;
