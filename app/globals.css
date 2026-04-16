@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Questrial&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Questrial&display=swap"); */
 
 :root {
   --bg: #0b0a0e;
@@ -11,7 +11,13 @@
   --cream: #f0e8dc;
   --muted: #8a7e78;
   --border-gold: rgba(200, 151, 58, 0.2);
+  /* Font families — populated by next/font variables */
+  --ff-caveat: var(--font-caveat, "Caveat"), cursive;
+  --ff-cormorant: var(--font-cormorant, "Cormorant Garamond"), serif;
+  --ff-questrial: var(--font-questrial, "Questrial"), sans-serif;
 }
+/* Override all Caveat usage globally */
+[style*="Caveat"] { font-family: var(--ff-caveat) !important; }
 
 *,
 *::before,
@@ -28,7 +34,7 @@ html {
 body {
   background: var(--bg);
   color: var(--cream);
-  font-family: "Questrial", sans-serif;
+  font-family: var(--font-questrial), "Questrial", sans-serif;
   overflow-x: hidden;
   cursor: none;
 }

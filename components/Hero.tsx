@@ -73,7 +73,7 @@ export default function Hero() {
       {/* Content */}
       <div style={{ position: "relative", zIndex: 4, textAlign: "center", padding: "0 1rem" }}>
         <p className="hero-anim" style={{
-          fontFamily: "'Caveat', cursive", fontSize: "1rem", letterSpacing: ".32em",
+          fontFamily: "'--font-comic', cursive", fontSize: "1rem", letterSpacing: ".32em",
           textTransform: "uppercase", display: "inline-block", marginBottom: "0.5rem",
           background: "linear-gradient(90deg, var(--cobalt), var(--rose), var(--gold))",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
@@ -83,7 +83,7 @@ export default function Hero() {
         </p>
 
         <h1 className="hero-anim" style={{
-          fontFamily: "'Caveat', cursive",
+          fontFamily: "var(--font-comic)",
           fontSize: "clamp(4.5rem, 13vw, 11rem)",
           fontWeight: 700, lineHeight: 0.95,
           padding: "0.05em 0.08em",
@@ -140,7 +140,7 @@ export default function Hero() {
               if (fill) fill.style.transform = "translateX(-102%)";
             }}
           >
-            <span className="btn-g" style={{ position: "relative", zIndex: 1 }}>View the Artworks</span>
+            <span className="btn-g" style={{fontFamily:"var(--font-comic)", position: "relative", zIndex: 1 }}>View the Artworks</span>
           </Link>
         </div>
       </div>
