@@ -84,16 +84,30 @@ export default function Hero() {
         </p>
 
         <h1 className="hero-anim" style={{
-          fontFamily: "var(--font-comic)",
-          fontSize: "clamp(4.5rem, 13vw, 11rem)",
-          fontWeight: 700, lineHeight: 0.95,
-          padding: "0.05em 0.08em",
-          background: "linear-gradient(160deg, var(--cream) 0%, rgba(240,232,220,.9) 25%, var(--gold) 50%, var(--rose) 70%, var(--cream) 100%)",
-          WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-          opacity: 0, transform: "translateY(26px)", transition: "opacity .9s ease, transform .9s ease",
-        }}>
-          3baset<br />Studio
-        </h1>
+  fontFamily: "var(--font-comic)",
+  fontSize: "clamp(4.5rem, 13vw, 11rem)",
+  fontWeight: 700,
+  lineHeight: 0.95,
+  padding: "0.05em 0.08em",
+
+  backgroundImage: `
+    linear-gradient(160deg, var(--cream) 0%, rgba(240,232,220,.9) 25%, var(--cream) 50%, var(--rose) 70%, var(--cream) 100%),
+    url('/works/carpet2.jpg')
+  `,
+  backgroundSize: "cover, cover",
+  backgroundPosition: "center, center",
+  backgroundBlendMode: "overlay", // دي أهم حاجة
+
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundClip: "text",
+
+  opacity: 0,
+  transform: "translateY(26px)",
+  transition: "opacity .9s ease, transform .9s ease",
+}}>
+  3baset<br />Studio
+</h1>
 
         <p className="hero-anim" style={{
           fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic",
