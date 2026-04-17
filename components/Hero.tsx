@@ -73,7 +73,7 @@ export default function Hero() {
       {/* Content */}
       <div style={{ position: "relative", zIndex: 4, textAlign: "center", padding: "0 1rem" }}>
         <p className="hero-anim" style={{
-          fontFamily: "'var(--font-comic)', cursive", fontSize: "1rem", letterSpacing: ".32em",
+          fontFamily: "var(--font-comic), cursive", fontSize: "1rem", letterSpacing: ".32em",
           textTransform: "uppercase", display: "inline-block", marginBottom: "0.5rem",
           background: "linear-gradient(90deg, var(--cobalt), var(--rose), var(--gold))",
           WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
