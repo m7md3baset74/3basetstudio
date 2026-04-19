@@ -12,6 +12,7 @@ export interface Work {
   waMsg: string;
   accentColor: string;
   images: string[];
+  imageRatio: string; // CSS aspect-ratio value
 }
 
 export const works: Work[] = [
@@ -27,9 +28,10 @@ export const works: Work[] = [
     dimensions: "180 × 120 cm",
     material: "Pure Handmade Silk",
     price: "00,000 EGP",
-    waMsg: "Hello, I'm interested in عابرة الزمن (Silk Carpet, 00,000 EGP).",
+    waMsg: "Hello, I'm interested in عابرة الزمن (Silk Carpet, 75,000 EGP).",
     accentColor: "#c8973a",
     images: ["/works/a.jpg"],
+    imageRatio: "3/5.3",   // portrait — tall & narrow
   },
   {
     id: "b",
@@ -43,9 +45,10 @@ export const works: Work[] = [
     dimensions: "175 × 100 cm",
     material: "Turkish Wool · Handwoven",
     price: "00,000 EGP",
-    waMsg: "Hello, I'm interested in سلطانة (Turkish Carpet, 00,000 EGP).",
+    waMsg: "Hello, I'm interested in سلطانة (Turkish Carpet, 50,000 EGP).",
     accentColor: "#c8607a",
     images: ["/works/b.jpg"],
+    imageRatio: "12/16",  // portrait — taller
   },
   {
     id: "c",
@@ -59,9 +62,10 @@ export const works: Work[] = [
     dimensions: "170 × 90 cm",
     material: "Handwoven Carpet",
     price: "00,000 EGP",
-    waMsg: "Hello, I'm interested in هي الآن (Modern Carpet, 00,000 EGP).",
+    waMsg: "Hello, I'm interested in هي الآن (Modern Carpet, 30,000 EGP).",
     accentColor: "#6abf95",
     images: ["/works/c.jpg"],
+    imageRatio: "1/1.9",   // very tall — narrow portrait
   },
   {
     id: "d",
@@ -78,6 +82,7 @@ export const works: Work[] = [
     waMsg: "Hello, I'm interested in على الأحمر (Red Carpet, 00,000 EGP).",
     accentColor: "#a080d0",
     images: ["/works/d.webp"],
+    imageRatio: "1/2",   // very tall — narrow portrait
   },
 ];
 
