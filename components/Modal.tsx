@@ -64,7 +64,7 @@ export default function Modal({ works, activeIndex, onClose, onNavigate }: Modal
 
       <p style={{
         fontSize: ".66rem", letterSpacing: ".12em",
-        textTransform: "uppercase", color: "var(--muted)", marginTop: ".25rem",
+        textTransform: "uppercase", color: "var(--muted)", marginTop: ".55rem",
       }}>
         {work.type}
       </p>
@@ -148,7 +148,7 @@ export default function Modal({ works, activeIndex, onClose, onNavigate }: Modal
 
       {/* Top bar */}
       <div style={{
-        position: "absolute", top: 0, left: 0, right: 0, zIndex: 5,
+        position: "absolute", top: 0, left: 0, right: 0, zIndex: 5, 
         padding: ".65rem .9rem",
         background: "linear-gradient(to bottom, rgba(60,60,61,.88), transparent)",
         display: "flex", alignItems: "center", justifyContent: "space-between",
