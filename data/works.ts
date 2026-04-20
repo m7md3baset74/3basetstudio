@@ -30,7 +30,7 @@ export const works: Work[] = [
     price: "00,000 EGP",
     waMsg: "Hello, I'm interested in ابنة المَلِك (Silk Carpet, 00,000 EGP).",
     accentColor: "#c8973a",
-    images: ["/works/a.jpg"],
+    images: ["/works/a.jpg","/works/a-scroll/a1.jpg","/works/a-scroll/a2.jpg","/works/a-scroll/a3.jpg","/works/a-scroll/a4.jpg","/works/a-scroll/a5.jpg","/works/a-scroll/a6.jpg","/works/a-scroll/a7.jpg"],
     imageRatio: "3/5.3",   // portrait — tall & narrow
   },
   {
@@ -47,7 +47,7 @@ export const works: Work[] = [
     price: "00,000 EGP",
     waMsg: "Hello, I'm interested in سلطانة (Turkish Carpet, 00,000 EGP).",
     accentColor: "#c8607a",
-    images: ["/works/b.jpg"],
+    images: ["/works/b.jpg","/works/b-scroll/b1.jpg","/works/b-scroll/b2.jpg","/works/b-scroll/b3.jpg","/works/b-scroll/b4.jpg"],
     imageRatio: "12/16",  // portrait — taller
   },
   {

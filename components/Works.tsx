@@ -106,7 +106,7 @@ export default function Works() {
                   <p style={{ fontFamily: "'Caveat', cursive", fontSize: ".85rem", letterSpacing: ".2em", color: numColors[i], marginBottom: ".4rem" }}>
                     — {work.num}
                   </p>
-                  <h3 style={{ fontFamily: "'Caveat', cursive", fontSize: "2rem", fontWeight: 700, color: "var(--cream)", lineHeight: 1.05 }}>
+                  <h3 style={{ fontFamily: "'Caveat', cursive", fontSize: "1.9rem", fontWeight: 700, color: "var(--cream)", lineHeight: 1.05 }}>
                     {work.nameAr}
                   </h3>
                   <p style={{ fontSize: ".7rem", letterSpacing: ".12em", textTransform: "uppercase", color: "var(--muted)", marginTop: ".4rem" }}>

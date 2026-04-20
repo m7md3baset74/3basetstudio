@@ -13,7 +13,9 @@ interface ModalProps {
 
 export default function Modal({ works, activeIndex, onClose, onNavigate }: ModalProps) {
   const [fading, setFading] = useState(false);
+  const [imgIndex, setImgIndex] = useState(0);
 
+  // Navigate between WORKS (dots)
   const navigate = useCallback((dir: number) => {
     if (activeIndex === null) return;
     setFading(true);
@@ -23,12 +25,21 @@ export default function Modal({ works, activeIndex, onClose, onNavigate }: Modal
     }, 280);
   }, [activeIndex, works.length, onNavigate]);
 
+  // Navigate between IMAGES within same work
+  const navigateImg = useCallback((dir: number) => {
+    setFading(true);
+    setTimeout(() => {
+      setImgIndex(prev => (prev + dir + (works[activeIndex ?? 0]?.images.length ?? 1)) % (works[activeIndex ?? 0]?.images.length ?? 1));
+      setFading(false);
+    }, 220);
+  }, [activeIndex, works]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (activeIndex === null) return;
       if (e.key === "Escape") onClose();
-      if (e.key === "ArrowLeft") navigate(-1);
-      if (e.key === "ArrowRight") navigate(1);
+      if (e.key === "ArrowLeft") navigateImg(-1);
+      if (e.key === "ArrowRight") navigateImg(1);
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -39,8 +50,15 @@ export default function Modal({ works, activeIndex, onClose, onNavigate }: Modal
     return () => { document.body.style.overflow = ""; };
   }, [activeIndex]);
 
+  // Reset image index when switching works
+  useEffect(() => {
+    setImgIndex(0);
+  }, [activeIndex]);
+
   if (activeIndex === null) return null;
   const work = works[activeIndex];
+  const workImages = work.images;
+  const totalImgs = workImages.length;
 
   /* ── Details panel (shared between layouts) ── */
   const DetailsPanel = () => (
@@ -70,8 +88,8 @@ export default function Modal({ works, activeIndex, onClose, onNavigate }: Modal
       </p>
 
       <p style={{
-        fontFamily: "var(--ff-comic, 'Cormorant Garamond', serif)",
-        fontStyle: "italic", fontSize: ".94rem", lineHeight: 1.5,
+        fontFamily: "var(--ff-comic, 'comic', serif)",
+        fontStyle: "italic", fontSize: ".94rem", lineHeight: 1.6,
         color: "var(--muted)", direction: "rtl", textAlign: "right",
         margin: "1.1rem 0 1.2rem",
       }}>
@@ -134,7 +152,7 @@ export default function Modal({ works, activeIndex, onClose, onNavigate }: Modal
   const ImageSection = () => (
     <div className="modal-image-section">
       <Image
-        src={work.images[0]}
+        src={workImages[imgIndex]}
         alt={work.nameAr}
         fill
         style={{
@@ -148,27 +166,30 @@ export default function Modal({ works, activeIndex, onClose, onNavigate }: Modal
 
       {/* Top bar */}
       <div style={{
-        position: "absolute", top: 0, left: 0, right: 0, zIndex: 5, 
+        position: "absolute", top: 0, left: 0, right: 0, zIndex: 5,
         padding: ".65rem .9rem",
         background: "linear-gradient(to bottom, rgba(60,60,61,.88), transparent)",
         display: "flex", alignItems: "center", justifyContent: "space-between",
       }}>
+        {/* Image counter */}
         <span style={{
           fontFamily: "var(--ff-caveat, 'Caveat', cursive)",
           fontSize: ".9rem", letterSpacing: ".18em", color: work.accentColor,
         }}>
-          {work.num} / {works.length}
+          {imgIndex + 1} / {totalImgs}
         </span>
 
+        {/* Image dots — navigate between images of this work */}
         <div style={{ display: "flex", gap: ".4rem", alignItems: "center" }}>
-          {works.map((w, i) => (
-            <button key={w.id} onClick={() => {
+          {workImages.map((_, i) => (
+            <button key={i} onClick={() => {
               setFading(true);
-              setTimeout(() => { onNavigate(i); setFading(false); }, 280);
+              setTimeout(() => { setImgIndex(i); setFading(false); }, 220);
             }} style={{
-              height: 7, width: i === activeIndex ? 20 : 7,
+              height: 7,
+              width: i === imgIndex ? 20 : 7,
               borderRadius: 4, border: "none", padding: 0, cursor: "pointer",
-              background: i === activeIndex ? w.accentColor : "rgba(255,255,255,.22)",
+              background: i === imgIndex ? work.accentColor : "rgba(255,255,255,.22)",
               transition: "all .35s cubic-bezier(.4,0,.2,1)",
             }} />
           ))}
@@ -188,7 +209,7 @@ export default function Modal({ works, activeIndex, onClose, onNavigate }: Modal
       </div>
 
       {/* PREV */}
-      <button onClick={() => navigate(-1)} className="modal-nav-btn modal-nav-prev">
+      <button onClick={() => navigateImg(-1)} className="modal-nav-btn modal-nav-prev">
         <div className="modal-nav-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M15 18l-6-6 6-6" />
@@ -197,7 +218,7 @@ export default function Modal({ works, activeIndex, onClose, onNavigate }: Modal
       </button>
 
       {/* NEXT */}
-      <button onClick={() => navigate(1)} className="modal-nav-btn modal-nav-next">
+      <button onClick={() => navigateImg(1)} className="modal-nav-btn modal-nav-next">
         <div className="modal-nav-icon">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <path d="M9 18l6-6-6-6" />
