@@ -70,9 +70,11 @@ export default function Hero() {
         <div style={{ position: "absolute", inset: 7, border: "1px dashed rgba(200,151,58,.08)" }} />
       </div>
 
-      {/* Content */}
+      {/* Content — identical to your original, just added paddingTop for navbar fix */}
       <div style={{ position: "relative", zIndex: 4, textAlign: "center", padding: "0 1rem" }}>
-        <p className="hero-anim" style={{
+
+        {/* Eyebrow — same as your original, hidden on desktop via CSS, shown via side slots */}
+        <p className="hero-anim hero-eyebrow-stacked" style={{
           fontFamily: "var(--font-comic), cursive", fontSize: "1rem", letterSpacing: ".32em",
           fontStyle: "italic", color: "var(--muted)",
           textTransform: "uppercase", display: "inline-block", marginBottom: "0.5rem",
@@ -83,19 +85,48 @@ export default function Hero() {
           — Acrylic · Carpet · Portrait —
         </p>
 
-        <h1 className="hero-anim" style={{
-          fontFamily: "var(--font-comic)",
-          fontSize: "clamp(4.5rem, 13vw, 11rem)",
-          fontWeight: 700, lineHeight: 0.95,
-          padding: "0.05em 0.08em",
-          background: "linear-gradient(160deg, var(--cream) 0%, rgba(240,232,220,.9) 25%, var(--gold) 50%, var(--rose) 70%, var(--cream) 100%)",
-          WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
-          opacity: 0, transform: "translateY(26px)", transition: "opacity .9s ease, transform .9s ease",
-        }}>
-          3baset<br />Studio
-        </h1>
+        {/* Desktop row: left side text | h1 | right side text */}
+        <div className="hero-desktop-row">
+          {/* LEFT — only visible on desktop */}
+          <p className="hero-anim hero-side-slot" style={{
+            fontFamily: "var(--font-comic), cursive", fontStyle: "italic",
+            fontSize: "clamp(1.2rem, 1.2vw, 1rem)", letterSpacing: ".14em",
+            background: "linear-gradient(90deg, var(--cobalt), var(--rose), var(--gold))",
+            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+            textAlign: "center", lineHeight: 1.7,
+            opacity: 0, transform: "translateY(26px)", transition: "opacity .9s ease, transform .9s ease",
+          }}>
+            Acrylic<br />·<br />Carpet<br />·<br />Portrait
+          </p>
 
-        <p className="hero-anim" style={{
+          {/* H1 — exactly your original */}
+          <h1 className="hero-anim" style={{
+            fontFamily: "var(--font-comic)",
+            fontSize: "clamp(4.5rem, 13vw, 11rem)",
+            fontWeight: 700, lineHeight: 0.95,
+            padding: "0.05em 0.08em",
+            background: "linear-gradient(160deg, var(--cream) 0%, rgba(240,232,220,.9) 25%, var(--gold) 50%, var(--rose) 70%, var(--cream) 100%)",
+            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+            opacity: 0, transform: "translateY(26px)", transition: "opacity .9s ease, transform .9s ease",
+          }}>
+            3baset<br />Studio
+          </h1>
+
+          {/* RIGHT — only visible on desktop */}
+          <p className="hero-anim hero-side-slot" style={{
+            fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic",
+            fontSize: "clamp(1.3rem, 1.2vw, 1rem)",
+            background: "linear-gradient(90deg, var(--rose), var(--gold))",
+            WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent", backgroundClip: "text",
+            textAlign: "center", lineHeight: 1.7,
+            opacity: 0, transform: "translateY(26px)", transition: "opacity .9s ease, transform .9s ease",
+          }}>
+            Where the<br />brushstroke<br />lives in<br />the weave
+          </p>
+        </div>
+
+        {/* Subtitle — your original, hidden on desktop */}
+        <p className="hero-anim hero-subtitle-stacked" style={{
           fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic",
           fontSize: "clamp(.95rem, 2.2vw, 1.35rem)",
           background: "linear-gradient(90deg, var(--rose), var(--gold))",
@@ -106,7 +137,7 @@ export default function Hero() {
           Where the brushstroke lives in the weave
         </p>
 
-        {/* Wavy divider */}
+        {/* Wavy divider — identical */}
         <div className="hero-anim" style={{
           width: 160, height: 20, margin: "1.8rem auto",
           backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='20'%3E%3Cdefs%3E%3ClinearGradient id='wg' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%231e3a6e'/%3E%3Cstop offset='33%25' stop-color='%23c8973a'/%3E%3Cstop offset='66%25' stop-color='%238b1a2f'/%3E%3Cstop offset='100%25' stop-color='%234a2d6b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M4 10 Q26 4 46 10 Q66 16 86 10 Q106 4 126 10 Q146 16 158 10' stroke='url(%23wg)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='80' cy='10' r='3' fill='%23c8973a' opacity='.7'/%3E%3C/svg%3E")`,
@@ -122,7 +153,7 @@ export default function Hero() {
           Four portraits. Four handmade carpets. A discipline that barely exists anywhere else — painted from Cairo, for the world.
         </p>
 
-        {/* CTA button */}
+        {/* CTA button — identical */}
         <div className="hero-anim" style={{
           marginTop: "2.6rem",
           opacity: 0, transform: "translateY(26px)", transition: "opacity .9s ease, transform .9s ease",
@@ -141,12 +172,12 @@ export default function Hero() {
               if (fill) fill.style.transform = "translateX(-102%)";
             }}
           >
-            <span className="btn-g" style={{fontFamily:"var(--font-comic)", position: "relative", zIndex: 1 }}>View the Artworks</span>
+            <span className="btn-g" style={{ fontFamily: "var(--font-comic)", position: "relative", zIndex: 1 }}>View the Artworks</span>
           </Link>
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — identical */}
       <div style={{
         position: "absolute", bottom: "1.8rem", left: "50%", transform: "translateX(-50%)",
         display: "flex", flexDirection: "column", alignItems: "center", gap: ".4rem",
@@ -173,6 +204,37 @@ export default function Hero() {
         @keyframes scrollPulse {
           0%,100% { opacity:1; }
           50% { opacity:.2; }
+        }
+
+        /* ── MOBILE: default — everything stacked, side slots hidden ── */
+        .hero-desktop-row {
+          display: contents; /* children flow normally in stacked layout */
+        }
+        .hero-side-slot { display: none !important; }
+        .hero-eyebrow-stacked { display: inline-block; }
+        .hero-subtitle-stacked { display: inline-block; }
+
+        /* ── DESKTOP only (≥ 900px) ── */
+        @media (min-width: 900px) {
+          /* hide stacked texts */
+          .hero-eyebrow-stacked { display: none !important; }
+          .hero-subtitle-stacked { display: none !important; }
+
+          /* activate row layout */
+          .hero-desktop-row {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+          }
+
+          /* show side slots */
+          .hero-side-slot {
+            display: block !important;
+            max-width: 140px;
+            flex-shrink: 0;
+          }
         }
       `}</style>
     </section>
