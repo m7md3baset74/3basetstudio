@@ -64,7 +64,7 @@ export const works: Work[] = [
     price: "00,000 EGP",
     waMsg: "Hello, I'm interested in ملامح ونسيج (Modern Carpet, 00,000 EGP).",
     accentColor: "#6abf95",
-    images: ["/works/c.jpg"],
+    images: ["/works/c.jpg","/works/c-scroll/c1.jpg","/works/c-scroll/c2.jpg","/works/c-scroll/c3.jpg","/works/c-scroll/c4.jpg","/works/c-scroll/c5.jpg","/works/c-scroll/c6.jpg"],
     imageRatio: "1/1.9",   // very tall — narrow portrait
   },
   {
