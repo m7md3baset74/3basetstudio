@@ -81,7 +81,7 @@ export const works: Work[] = [
     price: "00,000 EGP",
     waMsg: "Hello, I'm interested in روح الهوية (Red Carpet, 00,000 EGP).",
     accentColor: "#a080d0",
-    images: ["/works/d.webp"],
+    images: ["/works/d.webp","/works/d-scroll/d1.jpg","/works/d-scroll/d2.jpg","/works/d-scroll/d3.jpg","/works/d-scroll/d4.jpg","/works/d-scroll/d5.jpg","/works/d-scroll/d6.jpg","/works/d-scroll/d7.jpg"],
     imageRatio: "1/2",   // very tall — narrow portrait
   },
 ];
