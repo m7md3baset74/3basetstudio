@@ -84,11 +84,11 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/works/og-1.jpg",
+        url: "/public/works/og-img.jpg",
         width: 1200,
         height: 630,
         alt: "3baset Studio — Acrylic Portraits on Handmade Carpets",
-        type: "image/jpeg",
+        type: "image/jpg",
       },
     ],
   },
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/works/og-1.jpg"],
+    images: ["/public/works/og-img.jpg"],
     creator: "@3baset_74",
   },
 
