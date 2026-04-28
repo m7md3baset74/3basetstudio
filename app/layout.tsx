@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/public/works/og-img.jpg",
+        url: "/works/og-img1.jpg",
         width: 1200,
         height: 630,
         alt: "3baset Studio — Acrylic Portraits on Handmade Carpets",
@@ -98,7 +98,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/public/works/og-img.jpg"],
+    images: ["/works/og-img1.jpg"],
     creator: "@3baset_74",
   },
 
@@ -145,6 +145,7 @@ const jsonLd = {
         "https://www.instagram.com/3baset_74",
         "https://www.tiktok.com/@m7md3baset74",
       ],
+      logo: "https://3baset.art/icon3.png",
       jobTitle: "Visual Artist",
       description:
         "Cairo-based artist specializing in acrylic portrait painting on handmade carpets — a rare discipline combining contemporary fine art with centuries-old textile craft.",
