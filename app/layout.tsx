@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Caveat, Cormorant_Garamond, Questrial, Comic_Relief } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
 
 /* ── Fonts ── */
 const caveat = Caveat({
@@ -33,7 +34,7 @@ const questrial = Questrial({
 });
 
 /* ── SEO Metadata ── */
-const SITE_URL = "https://3baset.art";
+const SITE_URL = "https://3baset.art/";
 const SITE_NAME = "3baset Studio";
 const TITLE = "3baset Studio — Acrylic Portraits on Handmade Carpets | Cairo";
 const DESCRIPTION =
@@ -88,7 +89,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "3baset Studio — Acrylic Portraits on Handmade Carpets",
-        type: "image/jpg",
+        type: "image/jpeg",
       },
     ],
   },
@@ -286,7 +287,19 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+      
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-4VJJXE083H" strategy="afterInteractive" />
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4VJJXE083H');
+  `}
+</Script>
+        
+        {children}</body>
     </html>
   );
 }
